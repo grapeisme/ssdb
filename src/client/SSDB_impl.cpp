@@ -397,6 +397,14 @@ Status ClientImpl::zset(const std::string &name, const std::string &key, int64_t
 	return s;
 }
 
+Status ClientImpl::zset(const std::string &name, const std::string &key, int64_t score, const std::string &val){
+	std::string s_score = str(score);
+	const std::vector<std::string> *resp;
+	resp = this->request("zset", name, key, s_score, val);
+	Status s(resp);
+	return s;
+}
+
 Status ClientImpl::zdel(const std::string &name, const std::string &key){
 	const std::vector<std::string> *resp;
 	resp = this->request("zdel", name, key);

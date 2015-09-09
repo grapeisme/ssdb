@@ -64,6 +64,7 @@ public:
 
 	virtual Status zget(const std::string &name, const std::string &key, int64_t *ret);
 	virtual Status zset(const std::string &name, const std::string &key, int64_t score);
+	virtual Status zset(const std::string &name, const std::string &key, int64_t score, const std::string &val);
 	virtual Status zdel(const std::string &name, const std::string &key);
 	virtual Status zincr(const std::string &name, const std::string &key, int64_t incrby, int64_t *ret);
 	virtual Status zsize(const std::string &name, int64_t *ret);
